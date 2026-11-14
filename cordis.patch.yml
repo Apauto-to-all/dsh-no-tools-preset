@@ -20,6 +20,6 @@
               complete: true
               includeRuntimeContext: false
           - id: no-tools-guard
-            name: '@local/dsh-no-tools-preset'
+            name: dsh-no-tools-preset
     - id: no-tools-host-guard
-      name: '@local/dsh-no-tools-preset/host-guard'
+      name: dsh-no-tools-preset/host-guard
