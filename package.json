@@ -1,6 +1,6 @@
 {
   "name": "dsh-no-tools-preset",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DSH agent preset · 无工具预设：zero-tool preset — no code execution, no file access, no web, only the model's own reasoning.",
   "license": "MIT",
   "author": "Apauto-to-all",
