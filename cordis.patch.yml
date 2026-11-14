@@ -1,0 +1,25 @@
+# Agent preset no-tools: zero tools, pure model.
+# - 预设行守卫（index.js）：预设 scope 内 restrict({deny: 全局层全部工具})，
+#   沿 scope 链下传，遮蔽 deck/hindsight/modsearch 等全局注册的工具。
+# - 宿主行守卫（host-guard.js）：对组合在本预设下的每个 agent 按
+#   agent.ctx.tools.restrict 补一道同样的 deny（保险层，幂等）。
+# 两者共同保证：模型看到 0 个工具。
+- insert:
+    - id: preset-no-tools
+      name: '@deepseek-ai/dsh-agent-preset'
+      config:
+        id: no-tools
+        name: 无工具预设
+        description: 没有任何工具——不执行代码、不读写文件、不联网，只有模型本身的推理与知识。
+        order: 10
+        plugins:
+          - id: persona
+            name: '@deepseek-ai/dsh-persona'
+            config:
+              prefix: ''
+              complete: true
+              includeRuntimeContext: false
+          - id: no-tools-guard
+            name: '@local/dsh-no-tools-preset'
+    - id: no-tools-host-guard
+      name: '@local/dsh-no-tools-preset/host-guard'

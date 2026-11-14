@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "No-Tools Preset",
+    "description": "Adds a zero-tool agent preset: no code execution, no file access, no web, no skills — only the model's own reasoning and knowledge."
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "dsh-no-tools-preset",
+  "version": "1.0.0",
+  "description": "DSH agent preset · 无工具预设：zero-tool preset — no code execution, no file access, no web, only the model's own reasoning.",
+  "license": "MIT",
+  "author": "Apauto-to-all",
+  "icon": "icon.svg",
+  "type": "module",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Apauto-to-all/dsh-no-tools-preset.git"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./host-guard": "./host-guard.js",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "host-guard.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "LICENSE",
+    "locale",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
